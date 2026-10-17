@@ -1,0 +1,67 @@
+/* ==========================================================================
+   USP bar (.usp-bar)
+   Source: .global-footer-policy-container — 4-column strip, sits directly
+   between the article row and the newsletter bar. Despite the source class
+   name ("global-footer-policy-container") this is NOT the site footer.
+   ========================================================================== */
+.usp-bar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.usp-bar__item {
+  display: flex;
+  align-items: center;
+  width: 24%;
+}
+
+.usp-bar__icon {
+  flex: 0 0 auto;
+  width: 68px;
+  height: 68px;
+  margin-right: var(--space-2);
+}
+
+.usp-bar__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.usp-bar__title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  line-height: 22px;
+  color: var(--color-text-primary);
+}
+
+.usp-bar__subtitle {
+  font-size: var(--text-xs);
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--color-text-primary);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+  .usp-bar__item {
+    width: 48%;
+    margin-bottom: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .usp-bar__item {
+    width: 100%;
+  }
+
+  .usp-bar__icon {
+    width: 48px;
+    height: 48px;
+  }
+}

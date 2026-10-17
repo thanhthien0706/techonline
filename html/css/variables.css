@@ -1,0 +1,63 @@
+:root {
+  /* Brand colors */
+  --color-brand-blue: #0064bd;
+  --color-brand-blue-dark: #004f96;
+  --color-accent-red: #df3333;
+  --color-badge-pink-bg: #ffebee;
+  --color-badge-pink-text: #dd464c;
+
+  /* Backgrounds */
+  --color-bg-page: #f8f8fa;
+  --color-bg-white: #ffffff;
+
+  /* Text */
+  --color-text-primary: #000000;
+  --color-text-body: #464646;
+  --color-text-muted: #8e8e8e;
+  --color-text-light: #ffffff;
+
+  /* Borders */
+  --color-border: #e1e1e1;
+  --color-border-light: #ececec;
+
+  /* Typography */
+  --font-sans: 'Mulish', Arial, sans-serif;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 15px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Layout */
+  --max-width: 1224px;
+  --container-pad: 12px;
+  --header-top-h: 32px;
+  --header-main-h: auto;
+}

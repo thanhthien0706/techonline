@@ -1,0 +1,275 @@
+/* ==========================================================================
+   Hero banner slider (.hero)
+   Source: .home-banner-container — full-bleed, ~500px tall, Owl Carousel
+   ========================================================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  background: var(--color-bg-white);
+}
+
+.hero__slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition-slow);
+  will-change: transform;
+}
+
+.hero__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background var(--transition-fast), opacity var(--transition-fast);
+  opacity: 0;
+}
+
+.hero__slider:hover .hero__arrow {
+  opacity: 1;
+}
+
+.hero__arrow:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero__arrow--prev {
+  left: var(--space-5);
+}
+
+.hero__arrow--next {
+  right: var(--space-5);
+}
+
+.hero__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  z-index: 2;
+}
+
+.hero__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero__dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.hero__dot.is-active {
+  background: var(--color-bg-white);
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   Under-banner promo strip (.promo-strip)
+   Source: .home-banner-under.hover-img — 4 equal tiles, ~175px tall,
+   negative top margin overlaps bottom of hero by 40px, hover zoom 1.03x
+   ========================================================================== */
+.promo-strip {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: -40px;
+  margin-bottom: var(--space-10);
+  position: relative;
+  z-index: 3;
+}
+
+.promo-strip__tile {
+  flex: 1 1 0;
+  display: block;
+  height: 175px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.promo-strip__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-base);
+}
+
+.promo-strip__tile:hover .promo-strip__img {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   Category icon row (.category-icons)
+   Source: .home-category-list — 9 circular flat icons w/ label below
+   ========================================================================== */
+.category-icons {
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-6);
+}
+
+.category-icons__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 28px 12px;
+}
+
+.category-icons__item {
+  width: 140px;
+}
+
+.category-icons__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-4) var(--space-2);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-white);
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow var(--transition-base), transform var(--transition-fast);
+}
+
+.category-icons__link:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.category-icons__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto var(--space-2);
+  transition: transform var(--transition-fast);
+}
+
+.category-icons__link:hover .category-icons__icon {
+  transform: scale(1.06);
+}
+
+.category-icons__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.category-icons__label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  transition: color var(--transition-fast);
+}
+
+.category-icons__link:hover .category-icons__label {
+  color: var(--color-brand-blue);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero {
+    height: 360px;
+  }
+
+  .promo-strip {
+    flex-wrap: wrap;
+  }
+
+  .promo-strip__tile {
+    flex: 1 1 calc(50% - var(--space-3) / 2);
+    height: 150px;
+  }
+
+  .category-icons__item {
+    width: calc(33.333% - var(--space-3));
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 240px;
+  }
+
+  .hero__arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .promo-strip {
+    margin-top: -24px;
+    gap: var(--space-2);
+  }
+
+  .promo-strip__tile {
+    height: 110px;
+  }
+
+  .category-icons__list {
+    gap: var(--space-2) 0;
+  }
+
+  .category-icons__item {
+    width: 33.333%;
+  }
+
+  .category-icons__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .category-icons__label {
+    font-size: var(--text-sm);
+  }
+}

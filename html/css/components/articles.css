@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Article / promo card row (.article-row)
+   Source: #js-top-article-container (.home-article-group), inside .container
+   ========================================================================== */
+.article-row {
+  max-width: var(--max-width);
+  margin: 35px auto;
+  /* Source element nests its own 15px/12px padding inside the outer .container
+     12px gutter, giving 24px total horizontal inset off the 1224px box. */
+  padding: 15px calc(var(--container-pad) * 2);
+}
+
+.article-row__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.article-row__heading {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.article-row__view-all {
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--color-brand-blue);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.article-row__view-all:hover {
+  opacity: 0.75;
+}
+
+.article-row__grid {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.article-row__card {
+  position: relative;
+  display: block;
+  flex: 1 1 0;
+  height: 207px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.article-row__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.article-row__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.article-row__card:hover .article-row__img {
+  transform: scale(1.03);
+}
+
+.article-row__caption {
+  position: absolute;
+  left: var(--space-3);
+  right: var(--space-3);
+  bottom: var(--space-3);
+  z-index: 2;
+  color: var(--color-text-light);
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: 18px;
+}
+
+/* ==========================================================================
+   Secondary news grid (.home-news-group) — not present on the live site at
+   inspection time; no second lazy-loaded "TIN TỨC" article grid ever
+   appeared after the promo row. See docs/research/components/extras.spec.md.
+   ========================================================================== */
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+  .article-row__grid {
+    flex-wrap: wrap;
+  }
+
+  .article-row__card {
+    flex: 1 1 calc(50% - var(--space-3) / 2);
+    height: 170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-row {
+    padding: var(--space-3) var(--container-pad);
+  }
+
+  .article-row__heading {
+    font-size: var(--text-xl);
+  }
+
+  .article-row__card {
+    flex: 1 1 100%;
+    height: 180px;
+  }
+}

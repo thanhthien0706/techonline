@@ -1,0 +1,103 @@
+.compare-bar {
+  position: fixed;
+  left: 0;
+  top: 420px;
+  z-index: 40;
+  transform: rotate(-90deg) translateX(-100%);
+  transform-origin: left top;
+}
+
+.compare-bar__toggle {
+  background: var(--color-bg-white);
+  color: var(--color-brand-blue);
+  font-size: var(--text-base);
+  font-weight: 600;
+  padding: 10px var(--space-4);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-stack {
+  position: fixed;
+  right: var(--space-4);
+  bottom: 160px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact-stack__item {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  animation: contact-pulse 1.8s ease-in-out infinite;
+}
+
+.contact-stack__item--messenger {
+  background: linear-gradient(135deg, #00c6ff, #0068ff, #a033ff, #ff5db1);
+}
+
+.contact-stack__item--zalo {
+  background: #ffffff;
+  border: 2px solid #0068ff;
+}
+
+.contact-stack__zalo-text {
+  color: #0068ff;
+  font-weight: 800;
+  font-size: var(--text-md);
+  font-style: italic;
+}
+
+.contact-stack__item--phone {
+  background: var(--color-bg-white);
+  border: 2px solid var(--color-accent-red);
+}
+
+@keyframes contact-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.back-to-top {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-6);
+  z-index: 40;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-white);
+  color: var(--color-brand-blue);
+  box-shadow: 0 0 0 1px rgba(0, 100, 189, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 600px) {
+  .contact-stack {
+    right: var(--space-2);
+    bottom: 120px;
+  }
+  .contact-stack__item {
+    width: 44px;
+    height: 44px;
+  }
+  .compare-bar {
+    display: none;
+  }
+}

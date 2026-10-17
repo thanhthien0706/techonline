@@ -1,0 +1,299 @@
+.product-section {
+  padding: var(--space-6) 0;
+}
+
+.product-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+/* Category block: white card wrapper. The title tag bleeds out to the
+   card's own corner via relative offset, so it ignores the 10px padding
+   that every other child (tabs, cards grid) respects. */
+.product-section--category {
+  position: relative;
+  max-width: var(--max-width);
+  margin: var(--space-6) auto;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.product-section--category .container {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Category block header: angled blue title tag + sub-category links,
+   underlined by a 2px brand-blue rule. */
+.product-section--category .product-section__header {
+  position: relative;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.product-section--category .product-section__header::before {
+  content: "";
+  width: 123px;
+  height: 6px;
+  background: url(../../assets/images/bg-home-category.png) no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -15px;
+  left: 160px;
+  z-index: 0;
+}
+
+.product-section--category .product-section__title {
+  position: relative;
+  z-index: 1;
+  top: -10px;
+  left: -10px;
+  margin: 0;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding: 8px 50px 8px 18px;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+  background: var(--color-brand-blue);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border-top-left-radius: 12px;
+}
+
+.product-section__tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.product-section--category .product-section__tabs {
+  margin-left: var(--space-3);
+}
+
+.product-section--category .product-section__subtab {
+  font-size: 13.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #4b5563;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.product-section--category .product-section__subtab + .product-section__subtab {
+  border-left: 1px solid #d1d5db;
+  padding-left: var(--space-4);
+}
+
+.product-section--category .product-section__subtab:hover,
+.product-section--category .product-section__subtab.is-active {
+  color: var(--color-brand-blue);
+}
+
+/* Flash sale block */
+.product-section--flash {
+  position: relative;
+  overflow: hidden;
+  max-width: var(--max-width);
+  margin: var(--space-6) auto;
+  padding: 24px 20px;
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      120% 160% at 0% 0%,
+      rgba(0, 0, 0, 0.28) 0%,
+      rgba(0, 0, 0, 0) 45%
+    ),
+    linear-gradient(135deg, #e53935 0%, #d32f2f 55%, #c62828 100%);
+}
+
+.product-section--flash .container {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-section--flash .product-section__header {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.product-section__title--flash {
+  margin: 0 0 20px;
+  padding: 0;
+  background: none;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.product-section--flash .product-section__tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 0 0 20px;
+}
+
+.product-section__pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 0;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.product-section__pill-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.product-section__pill-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.product-section__pill-text b {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-section__pill-text span {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #4b5563;
+}
+
+.product-section__pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.product-section__pill.is-active {
+  background: linear-gradient(135deg, #ff7a00, #f57c00);
+}
+
+.product-section__pill.is-active .product-section__pill-icon {
+  background: #ffffff;
+  color: #f57c00;
+}
+
+.product-section__pill.is-active .product-section__pill-text b {
+  color: #ffffff;
+}
+
+.product-section__pill.is-active .product-section__pill-text span {
+  color: #fff8e1;
+}
+
+/* Inactive tab icon theming (tab 1 is always active, so this targets 2nd-4th) */
+.product-section__pill:nth-child(2) .product-section__pill-icon {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.product-section__pill:nth-child(3) .product-section__pill-icon {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.product-section__pill:nth-child(4) .product-section__pill-icon {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Product grid: 2 rows of 5 */
+.product-section__carousel {
+  position: relative;
+}
+
+.product-section__track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+}
+
+.product-section__view-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: var(--space-4);
+  color: var(--color-brand-blue);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+
+.product-section__view-more::after {
+  content: '\203A';
+  position: relative;
+  top: -1px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.product-section__view-more:hover {
+  text-decoration: underline;
+}
+
+.product-section--flash .product-section__view-more {
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .product-section__track {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-section__track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-section__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-section--flash .product-section__header {
+    align-items: center;
+  }
+}
