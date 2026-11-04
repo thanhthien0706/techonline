@@ -22,13 +22,7 @@ const menuData = [
       [
         {
           title: "Kabe vision",
-          items: ["Camera Wifi", "Camera IP", "Camera Analog", "Camera PTZ"]
-        }
-      ],
-      [
-        {
-          title: "Kabe vision",
-          items: ["Đầu ghi IP", "Đầu ghi Analog", "Switch", "Access Control"]
+          items: ["Camera Wifi", "Camera IP", "Camera Analog", "Camera PTZ", "Đầu ghi IP", "Đầu ghi Analog", "Switch", "Access Control"]
         }
       ]
     ]
@@ -42,19 +36,7 @@ const menuData = [
       [
         {
           title: "DAHUA",
-          items: ["Camera Wifi", "Camera IP", "Camera Analog", "Camera PTZ"]
-        }
-      ],
-      [
-        {
-          title: "DAHUA",
-          items: ["Đầu ghi IP", "Đầu ghi Analog", "Switch", "Chuông cửa màn hình"]
-        }
-      ],
-      [
-        {
-          title: "DAHUA",
-          items: ["Access control", "Sản phẩm dự án", "Phụ kiện / Sản phẩm khác"]
+          items: ["Camera Wifi", "Camera IP", "Camera Analog", "Camera PTZ", "Đầu ghi IP", "Đầu ghi Analog", "Switch", "Chuông cửa màn hình", "Access control", "Sản phẩm dự án", "Phụ kiện / Sản phẩm khác"]
         }
       ]
     ]
@@ -96,19 +78,7 @@ const menuData = [
       [
         {
           title: "TP-Link",
-          items: ["Mesh Wi-Fi", "Router Wi-Fi", "Modem / Gateway"]
-        }
-      ],
-      [
-        {
-          title: "TP-Link",
-          items: ["Thiết bị mở rộng mạng", "Wi-Fi di động", "Wi-Fi Adapter"]
-        }
-      ],
-      [
-        {
-          title: "TP-Link",
-          items: ["Phụ kiện", "Mạng Văn Phòng SOHO", "Giải pháp doanh nghiệp"]
+          items: ["Mesh Wi-Fi", "Router Wi-Fi", "Modem / Gateway", "Thiết bị mở rộng mạng", "Wi-Fi di động", "Wi-Fi Adapter", "Phụ kiện", "Mạng Văn Phòng SOHO", "Giải pháp doanh nghiệp"]
         }
       ]
     ]

@@ -476,8 +476,8 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
   color: #ffffff;
 }
 
-.category-menu__item:hover::after,
-.category-menu__item.is-active::after {
+.category-menu__item:not(.category-menu__item--no-sub):hover::after,
+.category-menu__item.is-active:not(.category-menu__item--no-sub)::after {
   content: "";
   position: absolute;
   left: 100%;
@@ -494,41 +494,38 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
   z-index: 1;
   top: 0;
   left: calc(250px);
-  width: 820px;
+  width: max-content;
+  min-width: 180px;
   max-width: 900px;
-  /* 9 sidebar items x 44px + 2px border, so the panel never looks shorter than the list. */
-  min-height: 396px;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0 26px;
+  /* The panel is absolutely positioned, so it doesn't affect the wrapper's
+     height — height:100% ties it to the sibling list's own height. */
+  height: 100%;
   padding: 24px 32px;
-  align-content: start;
   background: var(--color-bg-white);
   border: 1px solid #eaeaea;
   border-radius: 16px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
 }
 
-.category-menu__list:hover + .category-menu__panel,
-.category-menu__panel:hover {
-  display: grid;
-}
-
-.category-menu__column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.category-menu__group-title {
+.category-menu__list:hover + .category-menu__panel.has-content,
+.category-menu__panel.has-content:hover {
   display: block;
-  color: #c92127;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 10px;
 }
 
 .category-menu__group-list {
   list-style: none;
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(auto-fill, 44px);
+  grid-auto-columns: max-content;
+  column-gap: 26px;
+}
+
+.category-menu__group-list li {
+  height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 .category-menu__group-link {
@@ -536,7 +533,7 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
   color: #1f2937;
   font-size: 13px;
   font-weight: 400;
-  line-height: 1.9;
+  line-height: normal;
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 

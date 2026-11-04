@@ -5,46 +5,40 @@
 
   if (!wrapper || !list || !panel || typeof menuData === 'undefined') return;
 
+  function hasSubcategories(category) {
+    return category.columns.some((column) =>
+      column.some((group) => group.items && group.items.length > 0)
+    );
+  }
+
   function renderPanel(category) {
     panel.innerHTML = '';
 
+    if (!hasSubcategories(category)) {
+      panel.classList.remove('has-content');
+      return;
+    }
+
+    panel.classList.add('has-content');
+
+    const groupList = document.createElement('ul');
+    groupList.className = 'category-menu__group-list';
+
     category.columns.forEach((column) => {
-      const columnEl = document.createElement('div');
-      columnEl.className = 'category-menu__column';
-
       column.forEach((group) => {
-        if (!group.title) return;
-
-        const groupEl = document.createElement('div');
-        groupEl.className = 'category-menu__group';
-
-        const titleEl = document.createElement('span');
-        titleEl.className = 'category-menu__group-title';
-        titleEl.textContent = group.title;
-        groupEl.appendChild(titleEl);
-
-        if (group.items.length) {
-          const groupList = document.createElement('ul');
-          groupList.className = 'category-menu__group-list';
-
-          group.items.forEach((label) => {
-            const itemEl = document.createElement('li');
-            const linkEl = document.createElement('a');
-            linkEl.className = 'category-menu__group-link';
-            linkEl.href = '#';
-            linkEl.textContent = label;
-            itemEl.appendChild(linkEl);
-            groupList.appendChild(itemEl);
-          });
-
-          groupEl.appendChild(groupList);
-        }
-
-        columnEl.appendChild(groupEl);
+        group.items.forEach((label) => {
+          const itemEl = document.createElement('li');
+          const linkEl = document.createElement('a');
+          linkEl.className = 'category-menu__group-link';
+          linkEl.href = '#';
+          linkEl.textContent = label;
+          itemEl.appendChild(linkEl);
+          groupList.appendChild(itemEl);
+        });
       });
-
-      panel.appendChild(columnEl);
     });
+
+    panel.appendChild(groupList);
   }
 
   function setActive(index) {
@@ -56,6 +50,9 @@
   menuData.forEach((category, index) => {
     const item = document.createElement('li');
     item.className = 'category-menu__item';
+    if (!hasSubcategories(category)) {
+      item.classList.add('category-menu__item--no-sub');
+    }
 
     const inner = category.href ? document.createElement('a') : document.createElement('span');
     inner.className = 'category-menu__item-link';
