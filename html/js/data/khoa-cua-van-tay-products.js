@@ -199,7 +199,8 @@ const LOCK_CATEGORY_GROUPS = [
       { name: 'Module dùng cho điều khiển từ xa của khóa điện tử Solity 5800', oldPrice: '', price: '800.000 đ', discount: '', attrs: [], image: '250-589-module---i---u-khi---n-t----xa-kh--a---i---n-t----solity-5800.png', isNew: false },
       { name: 'Điều khiển từ xa cho khóa cửa điện tử Solity HG-TX210', oldPrice: '', price: '1.100.000 đ', discount: '', attrs: [], image: '250-590---i---u-khi---n-t----xa-kh--a-c---a-solity-hg-tx210.png', isNew: false },
       { name: 'Thiết bị thu phát vô tuyến dùng cho khóa cửa điện tử Solity model GW-100', oldPrice: '', price: '1.600.000 đ', discount: '', attrs: [], image: '250-591-thi---t-b----thu-ph--t-v---tuy---n-kh--a-c---a-solity-model-gw-100.png', isNew: false },
-      { name: 'Màn hình cảm ứng EZVIZ SD7 xem camera', oldPrice: '', price: '3.400.000 đ', discount: '', attrs: [], image: '250-2724-man-hinh-cam-ung-ezviz-sd7.jpg', isNew: false }
+      { name: 'Màn hình cảm ứng EZVIZ SD7 xem camera', oldPrice: '', price: '3.400.000 đ', discount: '', attrs: [], image: '250-2724-man-hinh-cam-ung-ezviz-sd7.jpg', isNew: false },
+      { name: 'Module mở rộng vân tay Dahua ASF7K-FQ (10.000 vân tay)', oldPrice: '', price: 'Liên hệ', discount: '', attrs: ['Vân tay', 'QR Code'], image: '250-module-van-tay-dahua-asf7k-fq.png', isNew: true, href: 'module-van-tay-dahua-asf7k-fq.html' }
     ]
   },
   {
