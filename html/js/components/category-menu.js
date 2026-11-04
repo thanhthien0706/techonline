@@ -56,9 +56,15 @@
   menuData.forEach((category, index) => {
     const item = document.createElement('li');
     item.className = 'category-menu__item';
-    item.innerHTML =
+
+    const inner = category.href ? document.createElement('a') : document.createElement('span');
+    inner.className = 'category-menu__item-link';
+    if (category.href) inner.href = category.href;
+    inner.innerHTML =
       '<span class="category-menu__icon">' + category.icon + '</span>' +
       '<span class="category-menu__label">' + category.title + '</span>';
+
+    item.appendChild(inner);
     item.addEventListener('mouseenter', () => setActive(index));
     list.appendChild(item);
   });

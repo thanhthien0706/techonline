@@ -2,6 +2,7 @@ const menuData = [
   {
     id: "camera",
     title: "Camera giám sát",
+    href: "camera-giam-sat.html",
     icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>`,
     columns: [
       [
@@ -27,6 +28,7 @@ const menuData = [
   {
     id: "network",
     title: "Thiết bị mạng",
+    href: "thiet-bi-mang.html",
     icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
     columns: [
       [
@@ -53,6 +55,7 @@ const menuData = [
   {
     id: "smartlock",
     title: "Khoá cửa vân tay",
+    href: "khoa-cua-van-tay.html",
     icon: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zM9 7a3 3 0 0 1 6 0v3H9V7z"/></svg>`,
     columns: [
       [
