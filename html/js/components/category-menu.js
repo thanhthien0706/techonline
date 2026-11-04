@@ -5,16 +5,25 @@
 
   if (!wrapper || !list || !panel || typeof menuData === 'undefined') return;
 
+  function flattenItems(category) {
+    const items = [];
+    category.columns.forEach((column) => {
+      column.forEach((group) => {
+        group.items.forEach((label) => items.push(label));
+      });
+    });
+    return items;
+  }
+
   function hasSubcategories(category) {
-    return category.columns.some((column) =>
-      column.some((group) => group.items && group.items.length > 0)
-    );
+    return flattenItems(category).length > 0;
   }
 
   function renderPanel(category) {
     panel.innerHTML = '';
 
-    if (!hasSubcategories(category)) {
+    const items = flattenItems(category);
+    if (!items.length) {
       panel.classList.remove('has-content');
       return;
     }
@@ -24,21 +33,33 @@
     const groupList = document.createElement('ul');
     groupList.className = 'category-menu__group-list';
 
-    category.columns.forEach((column) => {
-      column.forEach((group) => {
-        group.items.forEach((label) => {
-          const itemEl = document.createElement('li');
-          const linkEl = document.createElement('a');
-          linkEl.className = 'category-menu__group-link';
-          linkEl.href = '#';
-          linkEl.textContent = label;
-          itemEl.appendChild(linkEl);
-          groupList.appendChild(itemEl);
-        });
-      });
+    items.forEach((label) => {
+      const itemEl = document.createElement('li');
+      const linkEl = document.createElement('a');
+      linkEl.className = 'category-menu__group-link';
+      linkEl.href = '#';
+      linkEl.textContent = label;
+      itemEl.appendChild(linkEl);
+      groupList.appendChild(itemEl);
     });
 
     panel.appendChild(groupList);
+  }
+
+  function buildMobileSublist(category) {
+    const subList = document.createElement('ul');
+    subList.className = 'category-menu__mobile-sublist';
+
+    flattenItems(category).forEach((label) => {
+      const itemEl = document.createElement('li');
+      const linkEl = document.createElement('a');
+      linkEl.href = '#';
+      linkEl.textContent = label;
+      itemEl.appendChild(linkEl);
+      subList.appendChild(itemEl);
+    });
+
+    return subList;
   }
 
   function setActive(index) {
@@ -50,9 +71,6 @@
   menuData.forEach((category, index) => {
     const item = document.createElement('li');
     item.className = 'category-menu__item';
-    if (!hasSubcategories(category)) {
-      item.classList.add('category-menu__item--no-sub');
-    }
 
     const inner = category.href ? document.createElement('a') : document.createElement('span');
     inner.className = 'category-menu__item-link';
@@ -64,6 +82,30 @@
     item.appendChild(inner);
     item.addEventListener('mouseenter', () => setActive(index));
     list.appendChild(item);
+
+    if (!hasSubcategories(category)) {
+      item.classList.add('category-menu__item--no-sub');
+      return;
+    }
+
+    const toggleBtn = document.createElement('button');
+    toggleBtn.type = 'button';
+    toggleBtn.className = 'category-menu__item-toggle';
+    toggleBtn.setAttribute('aria-label', 'Mở danh mục con');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.innerHTML =
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>';
+    item.appendChild(toggleBtn);
+
+    const subList = buildMobileSublist(category);
+    item.appendChild(subList);
+
+    toggleBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const isExpanded = item.classList.toggle('is-expanded');
+      toggleBtn.setAttribute('aria-expanded', String(isExpanded));
+    });
   });
 
   wrapper.addEventListener('mouseleave', () => {

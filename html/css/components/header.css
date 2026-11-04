@@ -542,6 +542,17 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
   transform: translateX(3px);
 }
 
+/* Mobile accordion: toggle + sublist are nested inside .category-menu__item
+   but stay hidden on desktop, where hovering the shared panel is used instead. */
+.category-menu__item-toggle {
+  display: none;
+}
+
+.category-menu__mobile-sublist {
+  display: none;
+  list-style: none;
+}
+
 .site-header__mobile-toggle {
   display: none;
   align-items: center;
@@ -577,8 +588,7 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
   }
 
   .category-menu__panel {
-    width: 500px;
-    grid-template-columns: repeat(2, 1fr);
+    max-width: calc(100vw - 280px);
   }
 }
 
@@ -601,6 +611,7 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
 
   .site-header__main-inner {
     gap: var(--space-2);
+    padding-left: 44px;
   }
 
   .site-header__logo img {
@@ -630,9 +641,19 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
     display: none;
   }
 
+  /* .site-header__mobile-toggle lives outside .site-header__main-inner in the
+     markup, so flex `order` can't move it — anchor it over the row instead. */
+  .site-header__main {
+    position: relative;
+  }
+
   .site-header__mobile-toggle {
     display: flex;
-    order: 0;
+    position: absolute;
+    top: 50%;
+    left: var(--container-pad);
+    transform: translateY(-50%);
+    z-index: 5;
   }
 
   .site-header.is-mobile-open .site-header__category {
@@ -657,14 +678,73 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
     border-radius: var(--radius-md);
   }
 
+  /* The desktop hover flyout doesn't apply on touch; each item expands its
+     own subcategories inline instead (see .category-menu__item-toggle below). */
   .site-header.is-mobile-open .category-menu__panel {
-    display: grid;
-    position: static;
+    display: none;
+  }
+
+  .site-header.is-mobile-open .category-menu__item {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .site-header.is-mobile-open .category-menu__item-link {
+    width: auto;
+    height: 44px;
+    flex: 1 1 auto;
+  }
+
+  /* The flyout arrow points at the desktop hover panel, which doesn't exist here. */
+  .site-header.is-mobile-open .category-menu__item::after {
+    display: none;
+  }
+
+  .site-header.is-mobile-open .category-menu__item-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .site-header.is-mobile-open .category-menu__item-toggle svg {
+    transition: transform var(--transition-fast);
+  }
+
+  .site-header.is-mobile-open .category-menu__item.is-expanded .category-menu__item-toggle svg {
+    transform: rotate(180deg);
+  }
+
+  .site-header.is-mobile-open .category-menu__item.is-expanded .category-menu__mobile-sublist {
+    display: block;
+  }
+
+  .category-menu__mobile-sublist {
     width: 100%;
-    max-width: none;
-    margin-top: var(--space-2);
-    border-radius: var(--radius-md);
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
+    flex: 1 1 100%;
+    background: #f8fafc;
+  }
+
+  .category-menu__mobile-sublist li {
+    border-top: 1px solid #eef1f5;
+  }
+
+  .category-menu__mobile-sublist a {
+    display: block;
+    padding: 10px 16px 10px 52px;
+    font-size: 13px;
+    color: #475569;
+  }
+
+  .category-menu__mobile-sublist a:hover {
+    color: var(--color-brand-blue);
   }
 }
