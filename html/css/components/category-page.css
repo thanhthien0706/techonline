@@ -122,6 +122,14 @@
   padding: 12px;
 }
 
+.category-band__empty {
+  margin: 0;
+  padding: 24px 16px;
+  color: #8a8a8a;
+  font-size: 14px;
+  text-align: center;
+}
+
 @media (max-width: 1100px) {
   .category-icons {
     grid-template-columns: repeat(5, 1fr);

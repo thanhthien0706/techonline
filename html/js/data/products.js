@@ -1,72 +1,5 @@
 const PRODUCT_SECTIONS = [
   {
-    id: 'flashsale',
-    type: 'flashsale',
-    title: 'TOP SẢN PHẨM BÁN CHẠY',
-    tabs: [
-      { label: 'Sản phẩm giá sốc', sub: 'Giá luôn rẻ nhất', icon: 'flame' },
-      { label: 'Camera ưu đãi', sub: 'Chuẩn hàng chính hãng', icon: 'camera' },
-      { label: 'Cửa vân tay sale sốc', sub: 'TOP 1 bán chạy 2024', icon: 'fingerprint' },
-      { label: 'WIFI CHÍNH HÃNG', sub: 'Phủ sóng mọi nơi', icon: 'wifi' }
-    ],
-    viewAllText: 'XEM THÊM',
-    viewAllHref: '#',
-    products: [
-      {
-        name: 'Khóa cửa vân tay điện tử Ezviz DL05',
-        image: 'assets/images/product-flashsale-1.jpg',
-        price: '3.550.000 đ',
-        oldPrice: '8.000.000 đ',
-        discount: '-56%',
-        badge: 'Mẫu mới',
-        attrs: ['Cửa gỗ', 'App', 'Mã số', 'Thẻ từ', 'Vân tay'],
-        link: '#'
-      },
-      {
-        name: 'Khóa cửa nhôm thông minh EZVIZ DL06',
-        image: 'assets/images/product-flashsale-2.jpg',
-        price: '3.700.000 đ',
-        oldPrice: '5.200.000 đ',
-        discount: '-28%',
-        badge: 'Mẫu mới',
-        attrs: ['Cửa nhôm', 'App', 'Mã số', 'Thẻ từ', 'Vân tay'],
-        link: '#'
-      },
-      {
-        name: 'Khóa cửa vân tay Philips DDL603E-5HWS',
-        image: 'assets/images/product-flashsale-3.jpg',
-        price: '6.600.000 đ',
-        oldPrice: '8.250.000 đ',
-        discount: '-20%',
-        badge: '',
-        attrs: ['Cửa gỗ', 'App', 'Mã số', 'Thẻ từ', 'Vân tay'],
-        link: '#'
-      },
-      {
-        name: 'Khóa cửa thông minh DDL609-5HS tích hợp Vân tay, Mật khẩu, Thẻ từ',
-        image: 'assets/images/product-flashsale-4.jpg',
-        price: '4.600.000 đ',
-        oldPrice: '5.750.000 đ',
-        discount: '-20%',
-        badge: '',
-        specialPromo: true,
-        attrs: ['Cửa gỗ', 'Mã số', 'Thẻ từ', 'Vân tay'],
-        link: '#'
-      },
-      {
-        name: 'Khóa cửa thông minh Philips DDL610-5HBS, Tích hợp vân tay, Mật mã, thẻ từ, Wifi, Bluetoolth',
-        image: 'assets/images/product-flashsale-5.jpg',
-        price: '7.700.000 đ',
-        oldPrice: '9.620.000 đ',
-        discount: '-20%',
-        badge: '',
-        specialPromo: true,
-        attrs: ['Cửa gỗ', 'Mã số', 'Thẻ từ', 'Vân tay'],
-        link: '#'
-      }
-    ]
-  },
-  {
     id: 'cat1',
     type: 'category',
     title: 'Camera giám sát',
@@ -76,7 +9,7 @@ const PRODUCT_SECTIONS = [
       { label: 'Camera KBVision', href: '#' }
     ],
     viewAllText: 'Xem tất cả ›',
-    viewAllHref: '#',
+    viewAllHref: 'camera-giam-sat.html',
     products: [
       {
         name: 'Camera IP Dome Dahua DH-IPC-HDW1439T1-A-PRO 4MP có mic, AI-ISP',
@@ -127,6 +60,41 @@ const PRODUCT_SECTIONS = [
         badge: '',
         attrs: ['Xoay 360 độ', '5+5MP', '2 Mắt'],
         link: 'camera-wifi-kabevision-kx-5ptw-d-pma.html'
+      },
+      {
+        name: 'Camera Analog Dahua DH-HAC-HDW1200TQP-IL-T-VN',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2025/04/HAC-HDW1200TQP-IL-T-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['Dahua'],
+        link: 'camera-analog-dahua-dh-hac-hdw1200tqp-il-t-vn.html'
+      },
+      {
+        name: 'Camera PTZ Dahua DH-SD4A225DB-HNY',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2026/09/1_0_01_07_15253_195330777_crop-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['Dahua'],
+        link: 'camera-ptz-dahua-dh-sd4a225db-hny.html'
+      },
+      {
+        name: 'Camera Analog KabeVision KX-AD5013-A',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2025/07/KX-AD5013-A-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['KabeVision'],
+        link: 'camera-analog-kabevision-kx-ad5013-a.html'
+      },
+      {
+        name: 'Camera PTZ KabeVision KX-EAi2458LZSN',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2026/09/EAi2458LZSN-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['KabeVision'],
+        link: 'camera-ptz-kabevision-kx-eai2458lzsn.html'
+      },
+      {
+        name: 'Camera Imou IPC-UA7E-5M0T2-EU/FSP14',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2026/06/IPC-UA7E-5M0T2-EU.FSP14-1-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['Imou'],
+        link: 'camera-imou-ipc-ua7e-5m0t2-eu-fsp14.html'
       }
     ]
   },
@@ -140,7 +108,7 @@ const PRODUCT_SECTIONS = [
       { label: 'Modem – Gateway', href: '#' }
     ],
     viewAllText: 'Xem tất cả ›',
-    viewAllHref: '#',
+    viewAllHref: 'tp-link.html',
     products: [
       {
         name: 'Router Wi-Fi 7 TP-Link Archer GE230 băng tần kép BE3600',
@@ -191,134 +159,41 @@ const PRODUCT_SECTIONS = [
         badge: '',
         attrs: ['Wi-Fi 7', 'MLO'],
         link: 'bo-mo-rong-wifi-tplink-re235be.html'
-      }
-    ]
-  },
-  {
-    id: 'cat3',
-    type: 'category',
-    title: 'Khoá cửa vân tay',
-    tabs: [
-      { label: 'Khóa cửa Ezviz', href: '#' },
-      { label: 'Khóa vân tay Bosch', href: '#' },
-      { label: 'Khóa cửa Hafele', href: '#' }
-    ],
-    viewAllText: 'Xem tất cả ›',
-    viewAllHref: '#',
-    products: [
-      {
-        name: 'Khóa cửa vân tay Philips DDL603E-5HWS',
-        image: 'assets/images/product-cat3-1.jpg',
-        price: '6.600.000 đ',
-        oldPrice: '8.250.000 đ',
-        discount: '-20%',
-        badge: '',
-        attrs: [],
-        link: '#'
       },
       {
-        name: 'Khóa cửa vân tay Philips 7300-5',
-        image: 'assets/images/product-cat3-2.jpg',
-        price: '9.100.000 đ',
-        oldPrice: '11.370.000 đ',
-        discount: '-20%',
-        badge: '',
-        attrs: ['Cửa gỗ', 'App', 'Mã số', 'Thẻ từ', 'Vân tay'],
-        link: '#'
+        name: 'Wi-Fi Adapter TP-Link ARCHER TX50UH',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2026/08/ARCHER-TX50UH-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['TP-Link'],
+        link: 'wifi-adapter-tplink-archer-tx50uh.html'
       },
       {
-        name: 'Khóa cửa vân tay Philips Alpha-5',
-        image: 'assets/images/product-cat3-3.png',
-        price: '10.400.000 đ',
-        oldPrice: '13.000.000 đ',
-        discount: '-20%',
-        badge: '',
-        attrs: ['Cửa gỗ', 'App', 'Mã số', 'Thẻ từ', 'Vân tay'],
-        link: '#'
+        name: 'Phụ kiện TP-Link UH9120C',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2026/08/UH9120C-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['TP-Link'],
+        link: 'phu-kien-tplink-uh9120c.html'
       },
       {
-        name: 'Khóa cửa vân tay Kaadas M5',
-        image: 'assets/images/product-cat3-4.png',
-        price: '3.490.000 đ',
-        oldPrice: '4.600.000 đ',
-        discount: '-24%',
-        badge: '',
-        attrs: ['Cửa gỗ', 'Mã số', 'Thẻ từ', 'Vân tay'],
-        link: '#'
+        name: 'Mạng Văn Phòng SOHO TP-Link TL-SG1024DE',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2023/02/TL-SG1024DE-247x296.jpg',
+        price: 'Liên hệ',
+        attrs: ['TP-Link'],
+        link: 'mang-van-phong-soho-tplink-tl-sg1024de.html'
       },
       {
-        name: 'Khóa cửa vân tay Kaadas L8-5',
-        image: 'assets/images/product-cat3-5.jpg',
-        price: '4.900.000 đ',
-        oldPrice: '6.500.000 đ',
-        discount: '-25%',
-        badge: '',
-        attrs: ['Cửa gỗ', 'Mã số', 'Thẻ từ', 'Vân tay'],
-        link: '#'
-      }
-    ]
-  },
-  {
-    id: 'cat4',
-    type: 'category',
-    title: 'Nhà thông minh',
-    tabs: [
-      { label: 'Nhà thông minh theo hãng', href: '#' },
-      { label: 'Chuông cửa', href: '#' },
-      { label: 'Nhà thông minh theo tính năng', href: '#' }
-    ],
-    viewAllText: 'Xem tất cả ›',
-    viewAllHref: '#',
-    products: [
-      {
-        name: 'Công tắc cảm ứng Datic 1 nút',
-        image: 'assets/images/product-cat4-1.png',
-        price: '330.000 đ',
-        oldPrice: '500.000 đ',
-        discount: '-34%',
-        badge: '',
-        attrs: [],
-        link: '#'
+        name: 'Giải pháp doanh nghiệp TP-Link MC212CS-20',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2026/08/MC211CS-2-1-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['TP-Link'],
+        link: 'giai-phap-doanh-nghiep-tplink-mc212cs-20.html'
       },
       {
-        name: 'Công tắc cảm ứng WiFi Hunonic 1 Nút, Hình Chữ Nhật',
-        image: 'assets/images/product-cat4-2.png',
-        price: '730.000 đ',
-        oldPrice: '1.070.000 đ',
-        discount: '-32%',
-        badge: '',
-        attrs: [],
-        link: '#'
-      },
-      {
-        name: 'Công tắc cảm ứng WiFi Hunonic 2 Nút, Hình Chữ Nhật',
-        image: 'assets/images/product-cat4-3.png',
-        price: '750.000 đ',
-        oldPrice: '1.090.000 đ',
-        discount: '-31%',
-        badge: '',
-        attrs: [],
-        link: '#'
-      },
-      {
-        name: 'Công tắc cảm ứng WiFi Hunonic 3 Nút, Hình Chữ Nhật',
-        image: 'assets/images/product-cat4-4.png',
-        price: '770.000 đ',
-        oldPrice: '1.120.000 đ',
-        discount: '-31%',
-        badge: '',
-        attrs: [],
-        link: '#'
-      },
-      {
-        name: 'Công tắc cảm ứng WiFi Hunonic 4 Nút, Hình Chữ Nhật',
-        image: 'assets/images/product-cat4-5.png',
-        price: '810.000 đ',
-        oldPrice: '1.150.000 đ',
-        discount: '-30%',
-        badge: '',
-        attrs: [],
-        link: '#'
+        name: 'Mesh Wi-Fi TP-Link DECO X50-OUTDOOR',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2026/08/DECO-X50-OUTDOOR-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['TP-Link'],
+        link: 'mesh-wifi-tplink-deco-x50-outdoor.html'
       }
     ]
   },
@@ -332,7 +207,7 @@ const PRODUCT_SECTIONS = [
       { label: 'Module vân tay', href: '#' }
     ],
     viewAllText: 'Xem tất cả ›',
-    viewAllHref: '#',
+    viewAllHref: 'dahua.html',
     products: [
       {
         name: 'Máy chấm công khuôn mặt Dahua DHI-ASI3214A-W màn hình 4.3"',
@@ -383,6 +258,41 @@ const PRODUCT_SECTIONS = [
         badge: '',
         attrs: ['Khuôn mặt', 'Camera kép 2MP'],
         link: 'may-kiem-soat-ra-vao-kabevision-kx-fr04ac-fw.html'
+      },
+      {
+        name: 'Access control Dahua DHI-ASI6213S-D',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2025/07/DHI-ASI6213S-D-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['Dahua'],
+        link: 'kiem-soat-ra-vao-dahua-dhi-asi6213s-d.html'
+      },
+      {
+        name: 'Access control Dahua DHI-ASI6213S-PW',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2025/07/DHI-ASI6213S-PW-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['Dahua'],
+        link: 'kiem-soat-ra-vao-dahua-dhi-asi6213s-pw.html'
+      },
+      {
+        name: 'Access control Dahua DHI-ASI6213J-MW-V1',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2025/07/DHI-ASI6213J-MW-V1-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['Dahua'],
+        link: 'kiem-soat-ra-vao-dahua-dhi-asi6213j-mw-v1.html'
+      },
+      {
+        name: 'Access control Dahua DHI-ASI6214S',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2025/07/DHI-ASI6214S-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['Dahua'],
+        link: 'kiem-soat-ra-vao-dahua-dhi-asi6214s.html'
+      },
+      {
+        name: 'Access Control KabeVision KX-FR04AC-W',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2026/09/KX-FR04AC-W-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['KabeVision'],
+        link: 'kiem-soat-ra-vao-kabevision-kx-fr04ac-w.html'
       }
     ]
   },
@@ -396,7 +306,7 @@ const PRODUCT_SECTIONS = [
       { label: 'Ổ SSD', href: '#' }
     ],
     viewAllText: 'Xem tất cả ›',
-    viewAllHref: '#',
+    viewAllHref: 'sandisk.html',
     products: [
       {
         name: 'SSD SanDisk SDSSDA-240G-G26 2.5" SATA 3, 240GB',
@@ -409,51 +319,68 @@ const PRODUCT_SECTIONS = [
         link: 'ssd-sandisk-sdssda-240g-g26.html'
       },
       {
-        name: 'Thẻ nhớ SanDisk Ultra microSD 256GB',
-        image: 'assets/images/product-cat6-2.png',
-        price: '1.500.000 đ',
-        oldPrice: '1.700.000 đ',
-        discount: '-12%',
-        badge: '',
-        attrs: [],
-        link: '#'
+        name: 'Thẻ nhớ SanDisk',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2024/10/the-nho-sandisk-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['SanDisk'],
+        link: 'the-nho-sandisk-the-nho-sandisk.html'
       },
       {
-        name: 'Thẻ nhớ SanDisk Ultra microSD 128GB',
-        image: 'assets/images/product-cat6-3.png',
-        price: '700.000 đ',
-        oldPrice: '800.000 đ',
-        discount: '-13%',
-        badge: '',
-        attrs: [],
-        link: '#'
+        name: 'Thẻ nhớ Micro SD SanDisk',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2026/09/SANDISK.1-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['SanDisk'],
+        link: 'the-nho-sandisk-the-nho-micro-sd-sandisk.html'
       },
       {
-        name: 'Thẻ nhớ SanDisk Ultra microSD 64GB',
-        image: 'assets/images/product-cat6-4.png',
-        price: '450.000 đ',
-        oldPrice: '800.000 đ',
-        discount: '-44%',
-        badge: '',
-        attrs: [],
-        link: '#'
+        name: 'Thẻ nhớ Sandisk High Endurance',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2022/04/the-nho-sandisk-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['SanDisk'],
+        link: 'the-nho-sandisk-the-nho-sandisk-high-endurance.html'
       },
       {
-        name: 'Thẻ nhớ SanDisk Ultra microSD 32GB',
-        image: 'assets/images/product-cat6-5.png',
-        price: '350.000 đ',
-        oldPrice: '450.000 đ',
-        discount: '-22%',
-        badge: '',
-        attrs: [],
-        link: '#'
+        name: 'Ổ cứng Seagate Skyhawk AI 20TB',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2025/09/seagate-skyhawk-20tb-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['Seagate'],
+        link: 'o-cung-seagate-seagate-skyhawk-ai-20tb.html'
+      },
+      {
+        name: 'Ổ cứng Seagate Skyhawk AI',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2024/10/seagate-skyhawk-ai-247x296.png',
+        price: 'Liên hệ',
+        attrs: ['Seagate'],
+        link: 'o-cung-seagate-o-cung-seagate-skyhawk-ai.html'
+      },
+      {
+        name: 'Ổ cứng Seagate ST16000VE002',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2022/01/ST16000VE000-247x296.jpg',
+        price: 'Liên hệ',
+        attrs: ['Seagate'],
+        link: 'o-cung-seagate-st16000ve002.html'
+      },
+      {
+        name: 'Ổ cứng Seagate ST12000VE001',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2022/01/ST12000VE0008-247x296.jpg',
+        price: 'Liên hệ',
+        attrs: ['Seagate'],
+        link: 'o-cung-seagate-st12000ve001.html'
+      },
+      {
+        name: 'Ổ cứng Seagate ST10000VE001',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2022/01/ST10000VE0001-247x296.jpg',
+        price: 'Liên hệ',
+        attrs: ['Seagate'],
+        link: 'o-cung-seagate-st10000ve001.html'
+      },
+      {
+        name: 'Ổ cứng Seagate ST8000VE001',
+        image: 'https://kabegroup.vn/kabet/wp-content/uploads/2022/01/ST8000VE000-247x296.jpg',
+        price: 'Liên hệ',
+        attrs: ['Seagate'],
+        link: 'o-cung-seagate-st8000ve001.html'
       }
     ]
   }
 ];
-
-PRODUCT_SECTIONS.forEach((section) => {
-  if (section.type === 'category') {
-    section.products = section.products.concat(section.products);
-  }
-});
