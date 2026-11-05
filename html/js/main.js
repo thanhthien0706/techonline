@@ -12,11 +12,11 @@ animatedEls.forEach((el) => observer.observe(el));
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (e) => {
     const href = link.getAttribute('href');
+    // <base href="/"> makes a bare "#" resolve to "/" instead of staying on
+    // the current page, so always stop the default navigation here.
+    e.preventDefault();
     if (href.length <= 1) return;
     const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });

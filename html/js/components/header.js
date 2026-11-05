@@ -26,19 +26,20 @@ if (categoryMenu && categoryBtn) {
 
 const mobileToggle = document.getElementById('js-mobile-toggle');
 const mobileUtility = document.querySelector('.site-header__utility');
-const siteHeaderMainInner = document.querySelector('.site-header__main-inner');
+const siteHeaderRow2 = document.querySelector('.site-header__row2');
 
 // On mobile the utility links move inside the category drawer so it reads
 // as one menu instead of two separate floating pieces; on desktop/tablet
-// they're moved back to their original spot in the header row.
+// they're moved back to their original spot (row2, alongside the category
+// button).
 function syncMobileDrawerLayout() {
   if (!categoryMenu || !mobileUtility) return;
   if (isMobileHeaderViewport()) {
     if (mobileUtility.parentElement !== categoryMenu) {
       categoryMenu.appendChild(mobileUtility);
     }
-  } else if (siteHeaderMainInner && mobileUtility.parentElement !== siteHeaderMainInner) {
-    siteHeaderMainInner.appendChild(mobileUtility);
+  } else if (siteHeaderRow2 && mobileUtility.parentElement !== siteHeaderRow2) {
+    siteHeaderRow2.appendChild(mobileUtility);
   }
 }
 

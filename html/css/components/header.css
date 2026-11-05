@@ -118,11 +118,33 @@
   padding: var(--space-4) 0;
 }
 
+/* Two explicit rows: row1 (logo/search/right) and row2 (category/utility)
+   stack vertically by default; each row is its own flex-wrap group. */
 .site-header__main-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.site-header__row1,
+.site-header__row2 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-4);
+}
+
+/* Sticky: collapse row1/row2 back into a single flex context (same as the
+   pre-grouping markup) so the existing order:-1/0/1 jump below still works. */
+.site-header.is-sticky .site-header__main-inner {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.site-header.is-sticky .site-header__row1,
+.site-header.is-sticky .site-header__row2 {
+  display: contents;
 }
 
 .site-header__logo {
