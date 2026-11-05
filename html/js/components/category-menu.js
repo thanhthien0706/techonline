@@ -62,10 +62,23 @@
     return subList;
   }
 
+  function isMobileMenu() {
+    return window.matchMedia('(max-width: 600px)').matches;
+  }
+
   function setActive(index) {
     const items = list.querySelectorAll('.category-menu__item');
     items.forEach((el, i) => el.classList.toggle('is-active', i === index));
     renderPanel(menuData[index]);
+  }
+
+  function collapseExpanded(exceptItem) {
+    list.querySelectorAll('.category-menu__item.is-expanded').forEach((el) => {
+      if (el === exceptItem) return;
+      el.classList.remove('is-expanded');
+      const btn = el.querySelector('.category-menu__item-toggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
   }
 
   menuData.forEach((category, index) => {
@@ -80,7 +93,12 @@
       '<span class="category-menu__label">' + category.title + '</span>';
 
     item.appendChild(inner);
-    item.addEventListener('mouseenter', () => setActive(index));
+    // Mobile has no hover — a tap can still fire a synthetic mouseenter on
+    // some browsers, which would otherwise pop open the desktop flyout.
+    item.addEventListener('mouseenter', () => {
+      if (isMobileMenu()) return;
+      setActive(index);
+    });
     list.appendChild(item);
 
     if (!hasSubcategories(category)) {
@@ -100,12 +118,22 @@
     const subList = buildMobileSublist(category);
     item.appendChild(subList);
 
-    toggleBtn.addEventListener('click', (event) => {
+    // Mobile only: tapping the parent category (or its chevron) opens a
+    // plain dropdown list of subcategories right below it — no grid, no
+    // reuse of the desktop hover panel.
+    function toggleMobileSublist(event) {
+      if (!isMobileMenu()) return;
       event.preventDefault();
       event.stopPropagation();
-      const isExpanded = item.classList.toggle('is-expanded');
-      toggleBtn.setAttribute('aria-expanded', String(isExpanded));
-    });
+
+      const willExpand = !item.classList.contains('is-expanded');
+      collapseExpanded(item);
+      item.classList.toggle('is-expanded', willExpand);
+      toggleBtn.setAttribute('aria-expanded', String(willExpand));
+    }
+
+    inner.addEventListener('click', toggleMobileSublist);
+    toggleBtn.addEventListener('click', toggleMobileSublist);
   });
 
   wrapper.addEventListener('mouseleave', () => {

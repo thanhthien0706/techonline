@@ -542,8 +542,8 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
   transform: translateX(3px);
 }
 
-/* Mobile accordion: toggle + sublist are nested inside .category-menu__item
-   but stay hidden on desktop, where hovering the shared panel is used instead. */
+/* Mobile accordion: toggle + sublist are hidden on desktop/tablet, where
+   hovering the shared panel is used instead (see the mobile media query below). */
 .category-menu__item-toggle {
   display: none;
 }
@@ -611,16 +611,40 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
 
   .site-header__main-inner {
     gap: var(--space-2);
-    padding-left: 44px;
   }
 
-  .site-header__logo img {
-    height: 34px;
+  @keyframes mobile-menu-reveal {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Logo drops out on mobile — the header is a single compact row instead. */
+  .site-header__logo {
+    display: none;
+  }
+
+  /* Row: hamburger, shrunk search icon, cart pinned to the right. Tapping
+     the search icon reveals a fixed popup bar instead of an inline input. */
+  .site-header__mobile-toggle {
+    display: flex;
+    order: 1;
+    width: 40px;
+    height: 40px;
   }
 
   .site-header__search {
-    order: 3;
-    flex: 1 1 100%;
+    order: 2;
+    flex: 0 0 auto;
+    max-width: none;
+    width: 40px;
+    margin-left: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .site-header__search-input {
+    display: none;
   }
 
   .site-header__hotline-block,
@@ -629,108 +653,151 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
   }
 
   .site-header__right {
+    order: 3;
     margin-left: auto;
     gap: var(--space-2);
   }
 
+  /* ----- Mobile search popup ----- */
+  .site-header.is-mobile-search-open .site-header__search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 80;
+    width: auto;
+    height: 60px;
+    padding: 0 var(--container-pad);
+    background: var(--color-bg-white);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+    animation: mobile-menu-reveal 0.2s ease both;
+  }
+
+  .site-header.is-mobile-search-open .site-header__search-input {
+    display: block;
+    flex: 1;
+    width: auto;
+    margin-right: var(--space-2);
+  }
+
+  @keyframes mobile-drawer-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Dark backdrop behind the drawer, painted as part of the header's own
+     stacking context so it never needs extra markup. */
+  .site-header.is-mobile-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 85;
+    background: rgba(15, 23, 42, 0.5);
+    animation: mobile-drawer-fade 0.2s ease both;
+  }
+
+  .site-header__category-btn {
+    display: none;
+  }
+
+  /* ----- Drawer: one unified panel, slides in from the left. The utility
+     links are moved inside here (as the last child) by header.js on mobile,
+     so the whole menu — category nav + utility links — reads as one piece
+     instead of two separate floating elements. ----- */
   .site-header__category {
-    display: none;
-  }
-
-  .site-header__utility {
-    display: none;
-  }
-
-  /* .site-header__mobile-toggle lives outside .site-header__main-inner in the
-     markup, so flex `order` can't move it — anchor it over the row instead. */
-  .site-header__main {
-    position: relative;
-  }
-
-  .site-header__mobile-toggle {
     display: flex;
-    position: absolute;
-    top: 50%;
-    left: var(--container-pad);
-    transform: translateY(-50%);
-    z-index: 5;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 90;
+    width: min(85vw, 320px);
+    background: #ffffff;
+    box-shadow: 4px 0 24px rgba(15, 23, 42, 0.18);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+    pointer-events: none;
   }
 
   .site-header.is-mobile-open .site-header__category {
-    display: block;
-    order: 5;
-    flex: 1 1 100%;
+    transform: translateX(0);
+    pointer-events: auto;
   }
 
-  .site-header.is-mobile-open .site-header__category-btn {
-    display: none;
+  .site-header__category::before {
+    content: "Danh mục sản phẩm";
+    flex: 0 0 auto;
+    padding: 18px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--color-brand-blue);
   }
 
-  .site-header.is-mobile-open .category-menu {
+  .category-menu {
     display: flex;
     flex-direction: column;
     position: static;
     width: 100%;
+    flex: 0 0 auto;
   }
 
-  .site-header.is-mobile-open .category-menu__list {
+  .category-menu__list {
     width: 100%;
-    border-radius: var(--radius-md);
-  }
-
-  /* The desktop hover flyout doesn't apply on touch; each item expands its
-     own subcategories inline instead (see .category-menu__item-toggle below). */
-  .site-header.is-mobile-open .category-menu__panel {
-    display: none;
-  }
-
-  .site-header.is-mobile-open .category-menu__item {
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .site-header.is-mobile-open .category-menu__item-link {
-    width: auto;
-    height: 44px;
-    flex: 1 1 auto;
-  }
-
-  /* The flyout arrow points at the desktop hover panel, which doesn't exist here. */
-  .site-header.is-mobile-open .category-menu__item::after {
-    display: none;
-  }
-
-  .site-header.is-mobile-open .category-menu__item-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    background: transparent;
     border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* The desktop hover flyout doesn't apply on touch; each item gets its own
+     plain, single-column dropdown list instead (see category-menu.js). */
+  .category-menu__panel {
+    display: none;
+  }
+
+  /* Touch devices have no real hover: a tap can leave CSS :hover "stuck" on
+     an element, and some mobile browsers fire a synthetic mouseenter on tap
+     too. These overrides reuse the exact desktop selectors (same or higher
+     specificity) so nothing can open/highlight from a tap here — only the
+     explicit click handling in category-menu.js controls the dropdown. */
+  .site-header__category:hover .category-menu {
+    display: flex;
+  }
+
+  .category-menu__list:hover + .category-menu__panel.has-content,
+  .category-menu__panel.has-content:hover {
+    display: none;
+  }
+
+  .category-menu__item:hover {
+    background: transparent;
     color: inherit;
-    cursor: pointer;
+    font-weight: 500;
   }
 
-  .site-header.is-mobile-open .category-menu__item-toggle svg {
-    transition: transform var(--transition-fast);
+  .category-menu__item:hover .category-menu__icon {
+    color: #4a5568;
   }
 
-  .site-header.is-mobile-open .category-menu__item.is-expanded .category-menu__item-toggle svg {
-    transform: rotate(180deg);
-  }
-
-  .site-header.is-mobile-open .category-menu__item.is-expanded .category-menu__mobile-sublist {
-    display: block;
+  .category-menu__item:not(.category-menu__item--no-sub):hover::after {
+    content: none;
   }
 
   .category-menu__mobile-sublist {
+    display: block;
     width: 100%;
     flex: 1 1 100%;
+    max-height: 0;
+    overflow: hidden;
     background: #f8fafc;
+    transition: max-height 0.25s ease;
+  }
+
+  .category-menu__item.is-expanded .category-menu__mobile-sublist {
+    max-height: 1200px;
   }
 
   .category-menu__mobile-sublist li {
@@ -739,12 +806,107 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
 
   .category-menu__mobile-sublist a {
     display: block;
-    padding: 10px 16px 10px 52px;
+    padding: 11px 16px 11px 52px;
     font-size: 13px;
     color: #475569;
+    transition: background var(--transition-fast), color var(--transition-fast);
   }
 
-  .category-menu__mobile-sublist a:hover {
+  .category-menu__mobile-sublist a:hover,
+  .category-menu__mobile-sublist a:active {
+    background: #eef4ff;
     color: var(--color-brand-blue);
+  }
+
+  .category-menu__item {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    transition: background var(--transition-fast);
+  }
+
+  .category-menu__item-link {
+    width: auto;
+    height: 48px;
+    flex: 1 1 auto;
+    gap: var(--space-3);
+  }
+
+  /* The flyout arrow points at the desktop hover panel, which doesn't exist here. */
+  .category-menu__item::after {
+    display: none;
+  }
+
+  .category-menu__item-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: 0;
+    border-left: 1px solid #f1f5f9;
+    color: #94a3b8;
+    cursor: pointer;
+  }
+
+  .category-menu__item-toggle svg {
+    transition: transform var(--transition-fast);
+  }
+
+  .category-menu__item.is-expanded {
+    background: #f8fafc;
+  }
+
+  .category-menu__item.is-expanded .category-menu__item-toggle {
+    color: var(--color-brand-blue);
+  }
+
+  .category-menu__item.is-expanded .category-menu__item-toggle svg {
+    transform: rotate(180deg);
+  }
+
+  /* Safe default before header.js reparents it; the scoped rule below
+     takes over once it's actually inside the drawer. */
+  .site-header__utility {
+    display: none;
+  }
+
+  /* ----- Drawer: utility links, laid out as the last section inside the
+     same panel (header.js moves this element inside .site-header__category
+     on mobile — see syncMobileDrawerLayout). ----- */
+  .site-header__category .site-header__utility {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #eef1f5;
+    overflow: hidden;
+  }
+
+  .site-header__utility-item {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    padding: 13px 16px;
+    border: 0;
+    border-radius: 0;
+    text-transform: none;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .site-header__utility-item:not(:last-child) {
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .site-header__utility-item:hover,
+  .site-header__utility-item:active {
+    background: #f8fafc;
+    box-shadow: none;
   }
 }
