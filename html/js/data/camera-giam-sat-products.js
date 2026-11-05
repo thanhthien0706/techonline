@@ -28,7 +28,7 @@ const CAMERA_ICON_STRIP = [
 const CAMERA_CATEGORY_GROUPS = [
   {
     title: 'Camera IP Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'camera-ip-dahua.html',
     products: [
       { name: 'Camera IP Dahua DH-IPC-HDW1439T1-A-PRO', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/camera-ip-dahua-dh-ipc-hdw1439t1-a-pro.png', href: 'camera-ip-dahua-dh-ipc-hdw1439t1-a-pro.html' },
       { name: 'Camera IP Dahua DH-IPC-HDW1239T1-A-PRO', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/camera-ip-dahua-dh-ipc-hdw1239t1-a-pro.png', href: 'camera-ip-dahua-dh-ipc-hdw1239t1-a-pro.html' },
@@ -44,7 +44,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Camera Wifi Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'camera-wifi-dahua.html',
     products: [
       { name: 'Camera Wifi Dahua DH-H5AS', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/camera-wifi-dahua-dh-h5as.png', href: 'camera-wifi-dahua-dh-h5as.html' },
       { name: 'Camera Wifi Dahua DH-H3AS', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/camera-wifi-dahua-dh-h3as.png', href: 'camera-wifi-dahua-dh-h3as.html' },
@@ -60,7 +60,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Camera Analog Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'camera-analog-dahua.html',
     products: [
       { name: 'Camera Analog Dahua DH-HAC-HDW1200TQP-IL-T-VN', price: 'Liên hệ', attrs: ['2MP', 'Dahua'], image: 'assets/images/camera-giam-sat/outbox/camera-analog-dahua-dh-hac-hdw1200tqp-il-t-vn.png', href: 'camera-analog-dahua-dh-hac-hdw1200tqp-il-t-vn.html' },
       { name: 'Camera Analog Dahua DH-HAC-HDW1500TQP-IL-T', price: 'Liên hệ', attrs: ['5MP', 'Dahua'], image: 'assets/images/camera-giam-sat/outbox/camera-analog-dahua-dh-hac-hdw1500tqp-il-t.png', href: 'camera-analog-dahua-dh-hac-hdw1500tqp-il-t.html' },
@@ -76,7 +76,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Camera PTZ Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'camera-ptz-dahua.html',
     products: [
       { name: 'Camera PTZ Dahua DH-SD4A225DB-HNY', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/camera-ptz-dahua-dh-sd4a225db-hny.png', href: 'camera-ptz-dahua-dh-sd4a225db-hny.html' },
       { name: 'Camera PTZ Dahua DH-SDT2A200-2F-NB-A-PV', price: 'Liên hệ', attrs: ['2MP', 'Dahua'], image: 'assets/images/camera-giam-sat/outbox/camera-ptz-dahua-dh-sdt2a200-2f-nb-a-pv.png', href: 'camera-ptz-dahua-dh-sdt2a200-2f-nb-a-pv.html' },
@@ -92,7 +92,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Đầu ghi IP Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'dau-ghi-ip-dahua.html',
     products: [
       { name: 'Đầu ghi IP Dahua DHI-NVR5864-EI2', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/dau-ghi-ip-dahua-dhi-nvr5864-ei2.png', href: 'dau-ghi-ip-dahua-dhi-nvr5864-ei2.html' },
       { name: 'Đầu ghi IP Dahua DHI-NVR5832-EI2', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/dau-ghi-ip-dahua-dhi-nvr5832-ei2.png', href: 'dau-ghi-ip-dahua-dhi-nvr5832-ei2.html' },
@@ -106,7 +106,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Đầu ghi Analog Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'dau-ghi-analog-dahua.html',
     products: [
       { name: 'Đầu ghi Analog Dahua DH-XVR4116HS-I/T', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/dau-ghi-analog-dahua-dh-xvr4116hs-i-t.png', href: 'dau-ghi-analog-dahua-dh-xvr4116hs-i-t.html' },
       { name: 'Đầu ghi Analog Dahua DH-XVR5216AN-5M-I3/T', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/dau-ghi-analog-dahua-dh-xvr5216an-5m-i3-t.png', href: 'dau-ghi-analog-dahua-dh-xvr5216an-5m-i3-t.html' },
@@ -122,7 +122,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Kiểm soát ra vào Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'kiem-soat-ra-vao-dahua.html',
     products: [
       { name: 'Kiểm soát ra vào Dahua DHI-ASI3214A-W', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/kiem-soat-ra-vao-dahua-dhi-asi3214a-w.png', href: 'kiem-soat-ra-vao-dahua-dhi-asi3214a-w.html' },
       { name: 'Kiểm soát ra vào Dahua DHI-ASI3213A-W-E1', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/kiem-soat-ra-vao-dahua-dhi-asi3213a-w-e1.png', href: 'kiem-soat-ra-vao-dahua-dhi-asi3213a-w-e1.html' },
@@ -138,7 +138,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Chuông cửa màn hình Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'chuong-cua-man-hinh-dahua.html',
     products: [
       { name: 'Chuông cửa màn hình Dahua DHI-VTO2201F-P-S2', price: 'Liên hệ', attrs: ['2MP', 'Dahua'], image: 'assets/images/camera-giam-sat/outbox/chuong-cua-man-hinh-dahua-dhi-vto2201f-p-s2.png', href: 'chuong-cua-man-hinh-dahua-dhi-vto2201f-p-s2.html' },
       { name: 'Chuông cửa màn hình Dahua DHI-VTH2421FW-P', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/chuong-cua-man-hinh-dahua-dhi-vth2421fw-p.png', href: 'chuong-cua-man-hinh-dahua-dhi-vth2421fw-p.html' },
@@ -154,7 +154,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Switch Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'switch-dahua.html',
     products: [
       { name: 'Switch Dahua DH-CS4010-8ET2GT-60', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/switch-dahua-dh-cs4010-8et2gt-60.png', href: 'switch-dahua-dh-cs4010-8et2gt-60.html' },
       { name: 'Switch Dahua DH-CS4228-24GT-240', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/switch-dahua-dh-cs4228-24gt-240.png', href: 'switch-dahua-dh-cs4228-24gt-240.html' },
@@ -170,7 +170,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Phụ kiện Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'phu-kien-dahua.html',
     products: [
       { name: 'Phụ kiện Dahua DHI-LM22-B220N', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/phu-kien-dahua-dhi-lm22-b220n.png', href: 'phu-kien-dahua-dhi-lm22-b220n.html' },
       { name: 'Phụ kiện Dahua DHI-LM24-B221S', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/phu-kien-dahua-dhi-lm24-b221s.png', href: 'phu-kien-dahua-dhi-lm24-b221s.html' },
@@ -186,7 +186,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Sản phẩm dự án Dahua',
-    viewAllHref: '#',
+    viewAllHref: 'san-pham-du-an-dahua.html',
     products: [
       { name: 'Sản phẩm dự án Dahua ITC431-RW1F-L', price: 'Liên hệ', attrs: ['4MP', 'Dahua'], image: 'assets/images/camera-giam-sat/outbox/san-pham-du-an-dahua-itc431-rw1f-l.png', href: 'san-pham-du-an-dahua-itc431-rw1f-l.html' },
       { name: 'Sản phẩm dự án Dahua EN-ITC852', price: 'Liên hệ', attrs: ['Dahua'], image: 'assets/images/camera-giam-sat/outbox/san-pham-du-an-dahua-en-itc852.png', href: 'san-pham-du-an-dahua-en-itc852.html' },
@@ -202,7 +202,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Camera Imou',
-    viewAllHref: '#',
+    viewAllHref: 'camera-imou.html',
     products: [
       { name: 'Camera Imou IPC-A82P-PRO', price: 'Liên hệ', attrs: ['8MP', 'Imou'], image: 'assets/images/camera-giam-sat/outbox/camera-wifi-imou-ipc-a82p-pro.png', href: 'camera-wifi-imou-ipc-a82p-pro.html' },
       { name: 'Camera Imou IPC-UA7E-5M0T2-EU/FSP14', price: 'Liên hệ', attrs: ['5MP', 'Imou'], image: 'assets/images/camera-giam-sat/outbox/camera-wifi-imou-ipc-ua7e-5m0t2-eu-fsp14.png', href: 'camera-wifi-imou-ipc-ua7e-5m0t2-eu-fsp14.html' },
@@ -218,7 +218,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Đầu ghi Imou',
-    viewAllHref: '#',
+    viewAllHref: 'dau-ghi-imou.html',
     products: [
       { name: 'Đầu ghi Imou NVR-N110W-8A0E', price: 'Liên hệ', attrs: ['Imou'], image: 'assets/images/camera-giam-sat/outbox/dau-ghi-imou-nvr-n110w-8a0e.png', href: 'dau-ghi-imou-nvr-n110w-8a0e.html' },
       { name: 'Đầu ghi Imou NVR-N118W-8A0E', price: 'Liên hệ', attrs: ['Imou'], image: 'assets/images/camera-giam-sat/outbox/dau-ghi-imou-nvr-n118w-8a0e.png', href: 'dau-ghi-imou-nvr-n118w-8a0e.html' },
@@ -230,7 +230,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Sản phẩm khác Imou',
-    viewAllHref: '#',
+    viewAllHref: 'san-pham-khac-imou.html',
     products: [
       { name: 'Sản phẩm khác Imou SF110P', price: 'Liên hệ', attrs: ['Imou'], image: 'assets/images/camera-giam-sat/outbox/san-pham-khac-imou-sf110p.png', href: 'san-pham-khac-imou-sf110p.html' },
       { name: 'Sản phẩm khác Imou SF106P', price: 'Liên hệ', attrs: ['Imou'], image: 'assets/images/camera-giam-sat/outbox/san-pham-khac-imou-sf106p.png', href: 'san-pham-khac-imou-sf106p.html' },
@@ -242,7 +242,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Camera IP KBVision',
-    viewAllHref: '#',
+    viewAllHref: 'camera-ip-kbvision.html',
     products: [
       { name: 'Camera IP KBVision KX-CAiF5003N-DL-AB', price: 'Liên hệ', attrs: ['5MP', 'KBVision'], image: 'assets/images/camera-giam-sat/outbox/camera-ip-kbvision-kx-caif5003n-dl-ab.png', href: 'camera-ip-kbvision-kx-caif5003n-dl-ab.html' },
       { name: 'Camera IP KBVision KX-AF2111N3-VN', price: 'Liên hệ', attrs: ['2MP', 'KBVision'], image: 'assets/images/camera-giam-sat/outbox/camera-ip-kbvision-kx-af2111n3-vn.png', href: 'camera-ip-kbvision-kx-af2111n3-vn.html' },
@@ -252,14 +252,14 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Camera Analog KBVision',
-    viewAllHref: '#',
+    viewAllHref: 'camera-analog-kbvision.html',
     products: [
       { name: 'Camera Analog KBVision KX-AF5004S-DL-A', price: 'Liên hệ', attrs: ['5MP', 'KBVision'], image: 'assets/images/camera-giam-sat/outbox/camera-analog-kbvision-kx-af5004s-dl-a.png', href: 'camera-analog-kbvision-kx-af5004s-dl-a.html' }
     ]
   },
   {
     title: 'Sản phẩm KBVision',
-    viewAllHref: '#',
+    viewAllHref: 'san-pham-kbvision.html',
     products: [
       { name: 'Sản phẩm KBVision PROVMS', price: 'Liên hệ', attrs: ['KBVision'], image: 'assets/images/camera-giam-sat/outbox/san-pham-kbvision-provms.jpg', href: 'san-pham-kbvision-provms.html' },
       { name: 'Sản phẩm KBVision KX-VDP02HWN', price: 'Liên hệ', attrs: ['KBVision'], image: 'assets/images/camera-giam-sat/outbox/chuong-cua-man-hinh-kbvision-kx-vdp02hwn.png', href: 'chuong-cua-man-hinh-kbvision-kx-vdp02hwn.html' },
@@ -270,14 +270,14 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Camera Wifi KabeVision',
-    viewAllHref: '#',
+    viewAllHref: 'camera-wifi-kabevision.html',
     products: [
       { name: 'Camera Wifi KabeVision KX-5PTW-D-PMA', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/camera-wifi-kabevision-kx-5ptw-d-pma.png', href: 'camera-wifi-kabevision-kx-5ptw-d-pma.html' }
     ]
   },
   {
     title: 'Camera Analog KabeVision',
-    viewAllHref: '#',
+    viewAllHref: 'camera-analog-kabevision.html',
     products: [
       { name: 'Camera Analog KabeVision KX-AD5013-A', price: 'Liên hệ', attrs: ['5MP', 'KabeVision'], image: 'assets/images/camera-giam-sat/outbox/camera-analog-kabevision-kx-ad5013-a.png', href: 'camera-analog-kabevision-kx-ad5013-a.html' },
       { name: 'Camera Analog KabeVision KX-AD5112C-A-VN', price: 'Liên hệ', attrs: ['5MP', 'KabeVision'], image: 'assets/images/camera-giam-sat/outbox/camera-analog-kabevision-kx-ad5112c-a-vn.png', href: 'camera-analog-kabevision-kx-ad5112c-a-vn.html' },
@@ -291,7 +291,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Camera PTZ KabeVision',
-    viewAllHref: '#',
+    viewAllHref: 'camera-ptz-kabevision.html',
     products: [
       { name: 'Camera PTZ KabeVision KX-EAi2458LZSN', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/camera-ptz-kabevision-kx-eai2458lzsn.png', href: 'camera-ptz-kabevision-kx-eai2458lzsn.html' },
       { name: 'Camera PTZ KabeVision KX-DAi4328GPN3', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/camera-ptz-kabevision-kx-dai4328gpn3.png', href: 'camera-ptz-kabevision-kx-dai4328gpn3.html' },
@@ -307,7 +307,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Đầu ghi IP KabeVision',
-    viewAllHref: '#',
+    viewAllHref: 'dau-ghi-ip-kabevision.html',
     products: [
       { name: 'Đầu ghi IP KabeVision KX-EAi4K8864N4', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/dau-ghi-ip-kabevision-kx-eai4k8864n4.png', href: 'dau-ghi-ip-kabevision-kx-eai4k8864n4.html' },
       { name: 'Đầu ghi IP KabeVision KX-DAi4K8864EN3-VN', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/dau-ghi-ip-kabevision-kx-dai4k8864en3-vn.png', href: 'dau-ghi-ip-kabevision-kx-dai4k8864en3-vn.html' },
@@ -323,7 +323,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Đầu ghi Analog KabeVision',
-    viewAllHref: '#',
+    viewAllHref: 'dau-ghi-analog-kabevision.html',
     products: [
       { name: 'Đầu ghi Analog KabeVision KX-7108T-VN', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/dau-ghi-analog-kabevision-kx-7108t-vn.png', href: 'dau-ghi-analog-kabevision-kx-7108t-vn.html' },
       { name: 'Đầu ghi Analog KabeVision KX-C4K8432SN3', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/dau-ghi-analog-kabevision-kx-c4k8432sn3.png', href: 'dau-ghi-analog-kabevision-kx-c4k8432sn3.html' }
@@ -331,7 +331,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Kiểm soát ra vào KabeVision',
-    viewAllHref: '#',
+    viewAllHref: 'kiem-soat-ra-vao-kabevision.html',
     products: [
       { name: 'Kiểm soát ra vào KabeVision KX-FR04AC-FW', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/kiem-soat-ra-vao-kabevision-kx-fr04ac-fw.png', href: 'kiem-soat-ra-vao-kabevision-kx-fr04ac-fw.html' },
       { name: 'Kiểm soát ra vào KabeVision KX-FR04AC-W', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/kiem-soat-ra-vao-kabevision-kx-fr04ac-w.png', href: 'kiem-soat-ra-vao-kabevision-kx-fr04ac-w.html' }
@@ -339,7 +339,7 @@ const CAMERA_CATEGORY_GROUPS = [
   },
   {
     title: 'Switch KabeVision',
-    viewAllHref: '#',
+    viewAllHref: 'switch-kabevision.html',
     products: [
       { name: 'Switch KabeVision KX-DACS5121-8M-60-PMA', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/switch-kabevision-kx-dacs5121-8m-60-pma.png', href: 'switch-kabevision-kx-dacs5121-8m-60-pma.html' },
       { name: 'Switch KabeVision KX-DACS5337-16M-135-PMA', price: 'Liên hệ', attrs: ['KabeVision'], image: 'assets/images/camera-giam-sat/outbox/switch-kabevision-kx-dacs5337-16m-135-pma.png', href: 'switch-kabevision-kx-dacs5337-16m-135-pma.html' },

@@ -9,7 +9,7 @@
     const items = [];
     category.columns.forEach((column) => {
       column.forEach((group) => {
-        group.items.forEach((label) => items.push(label));
+        group.items.forEach((item) => items.push(item));
       });
     });
     return items;
@@ -33,12 +33,12 @@
     const groupList = document.createElement('ul');
     groupList.className = 'category-menu__group-list';
 
-    items.forEach((label) => {
+    items.forEach((item) => {
       const itemEl = document.createElement('li');
       const linkEl = document.createElement('a');
       linkEl.className = 'category-menu__group-link';
-      linkEl.href = '#';
-      linkEl.textContent = label;
+      linkEl.href = item.href || '#';
+      linkEl.textContent = item.label;
       itemEl.appendChild(linkEl);
       groupList.appendChild(itemEl);
     });
@@ -50,11 +50,11 @@
     const subList = document.createElement('ul');
     subList.className = 'category-menu__mobile-sublist';
 
-    flattenItems(category).forEach((label) => {
+    flattenItems(category).forEach((item) => {
       const itemEl = document.createElement('li');
       const linkEl = document.createElement('a');
-      linkEl.href = '#';
-      linkEl.textContent = label;
+      linkEl.href = item.href || '#';
+      linkEl.textContent = item.label;
       itemEl.appendChild(linkEl);
       subList.appendChild(itemEl);
     });

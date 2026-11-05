@@ -498,8 +498,10 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
   min-width: 180px;
   max-width: 900px;
   /* The panel is absolutely positioned, so it doesn't affect the wrapper's
-     height — height:100% ties it to the sibling list's own height. */
-  height: 100%;
+     height — min-height:100% matches the sibling list's height when the
+     category has few subcategories, but lets the panel grow taller than
+     the list when it has more (instead of clipping/scrolling content). */
+  min-height: 100%;
   padding: 24px 32px;
   background: var(--color-bg-white);
   border: 1px solid #eaeaea;
@@ -514,11 +516,9 @@ body.is-homepage .site-header.is-sticky .category-menu__list {
 
 .category-menu__group-list {
   list-style: none;
-  height: 100%;
   display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(auto-fill, 44px);
-  grid-auto-columns: max-content;
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  grid-auto-rows: 44px;
   column-gap: 26px;
 }
 
