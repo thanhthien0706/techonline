@@ -9,10 +9,3 @@ if (backToTop) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
-
-const compareToggle = document.querySelector('.compare-bar__toggle');
-if (compareToggle) {
-  compareToggle.addEventListener('click', () => {
-    compareToggle.closest('.compare-bar').classList.toggle('is-open');
-  });
-}

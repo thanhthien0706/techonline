@@ -42,7 +42,6 @@ function renderSubProductCard(p) {
         <div class="product-card__price-row">${priceRow}</div>
         ${attrs}
         <div class="product-card__actions">
-          <a href="${href}" class="product-card__compare">So sánh</a>
           <button class="product-card__cart" type="button" aria-label="Thêm vào giỏ hàng">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 8H6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
