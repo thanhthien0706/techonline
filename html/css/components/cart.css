@@ -369,6 +369,114 @@
   color: var(--color-text-muted);
 }
 
+.bank-transfer {
+  display: none;
+  margin: calc(-1 * var(--space-1)) 0 var(--space-1);
+}
+
+.checkout-form__payment:has(input[value='bank']:checked) .bank-transfer {
+  display: block;
+}
+
+.bank-transfer__card {
+  display: flex;
+  gap: var(--space-5);
+  border: 1.5px dashed var(--color-brand-blue);
+  border-radius: var(--radius-lg);
+  background: #f5faff;
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.bank-transfer__qr {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--color-border-light);
+}
+
+.bank-transfer__qr img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.bank-transfer__details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  justify-content: center;
+}
+
+.bank-transfer__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.bank-transfer__label {
+  color: var(--color-text-muted);
+  min-width: 96px;
+}
+
+.bank-transfer__value {
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  word-break: break-word;
+}
+
+.bank-transfer__value--accent {
+  color: var(--color-brand-blue);
+  font-size: var(--text-md);
+}
+
+.bank-transfer__copy {
+  border: 1px solid var(--color-brand-blue);
+  color: var(--color-brand-blue);
+  background: #fff;
+  border-radius: var(--radius-full);
+  padding: 2px 12px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.bank-transfer__copy:hover {
+  background: #eaf3ff;
+}
+
+.bank-transfer__copy.is-copied {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: #fff;
+}
+
+.bank-transfer__confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.bank-transfer__confirm input {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
 .checkout-form__submit {
   width: 100%;
   background: var(--color-brand-blue);
@@ -563,5 +671,15 @@
 
   .checkout-form__row {
     grid-template-columns: 1fr;
+  }
+
+  .bank-transfer__card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bank-transfer__row {
+    justify-content: center;
   }
 }

@@ -7,6 +7,8 @@
   const successEl = document.getElementById('js-checkout-success');
   const form = document.getElementById('js-checkout-form');
   const errorEl = document.getElementById('js-checkout-error');
+  const bankContentEl = document.getElementById('js-bank-content');
+  const bankConfirmEl = document.getElementById('js-bank-confirm');
   if (!form) return;
 
   function escapeHtml(str) {
@@ -53,11 +55,34 @@
     return 'TO' + Date.now().toString().slice(-8);
   }
 
+  // Generated once per visit so the "Nội dung CK" shown before paying
+  // matches the order code shown after the order is placed.
+  const orderCode = randomOrderCode();
+  if (bankContentEl) bankContentEl.textContent = orderCode;
+
+  document.querySelectorAll('.bank-transfer__copy').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-copy-target');
+      const targetEl = document.getElementById(targetId);
+      if (!targetEl) return;
+      navigator.clipboard.writeText(targetEl.textContent.trim()).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Đã chép';
+        btn.classList.add('is-copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('is-copied');
+        }, 1500);
+      });
+    });
+  });
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const name = document.getElementById('js-checkout-name').value.trim();
     const phone = document.getElementById('js-checkout-phone').value.trim();
     const address = document.getElementById('js-checkout-address').value.trim();
+    const paymentMethod = form.querySelector('input[name="payment"]:checked').value;
 
     if (!name || !phone || !address) {
       errorEl.textContent = 'Vui lòng điền đầy đủ Họ tên, Số điện thoại và Địa chỉ nhận hàng.';
@@ -67,9 +92,12 @@
       errorEl.textContent = 'Số điện thoại không hợp lệ.';
       return;
     }
+    if (paymentMethod === 'bank' && bankConfirmEl && !bankConfirmEl.checked) {
+      errorEl.textContent = 'Vui lòng xác nhận bạn đã chuyển khoản trước khi đặt hàng.';
+      return;
+    }
     errorEl.textContent = '';
 
-    const orderCode = randomOrderCode();
     Cart.clear();
 
     formWrap.hidden = true;

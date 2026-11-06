@@ -222,9 +222,42 @@
                 <input type="radio" name="payment" value="bank" />
                 <span>
                   <strong>Chuyển khoản ngân hàng</strong>
-                  <span>Nhân viên sẽ gửi thông tin chuyển khoản sau khi đặt hàng</span>
+                  <span>Quét mã QR hoặc chuyển khoản theo thông tin bên dưới</span>
                 </span>
               </label>
+
+              <div class="bank-transfer" id="js-bank-transfer">
+                <div class="bank-transfer__card">
+                  <div class="bank-transfer__qr">
+                    <img src="assets/images/bank-qr.png" alt="Mã QR chuyển khoản ngân hàng" width="160" height="160" />
+                  </div>
+                  <div class="bank-transfer__details">
+                    <div class="bank-transfer__row">
+                      <span class="bank-transfer__label">Ngân hàng</span>
+                      <strong class="bank-transfer__value">Techcombank</strong>
+                    </div>
+                    <div class="bank-transfer__row">
+                      <span class="bank-transfer__label">Số tài khoản</span>
+                      <strong class="bank-transfer__value bank-transfer__value--accent" id="js-bank-account">9929394999</strong>
+                      <button type="button" class="bank-transfer__copy" data-copy-target="js-bank-account">Sao chép</button>
+                    </div>
+                    <div class="bank-transfer__row">
+                      <span class="bank-transfer__label">Chủ tài khoản</span>
+                      <strong class="bank-transfer__value">HO KINH DOANH DICH VU KY THUAT TAN AN NGUYEN</strong>
+                    </div>
+                    <div class="bank-transfer__row">
+                      <span class="bank-transfer__label">Nội dung CK</span>
+                      <strong class="bank-transfer__value bank-transfer__value--accent" id="js-bank-content"></strong>
+                      <button type="button" class="bank-transfer__copy" data-copy-target="js-bank-content">Sao chép</button>
+                    </div>
+                  </div>
+                </div>
+
+                <label class="bank-transfer__confirm">
+                  <input type="checkbox" id="js-bank-confirm" />
+                  <span>Tôi đã chuyển khoản <strong>đúng số tiền</strong> với nội dung là mã đơn hàng ở trên</span>
+                </label>
+              </div>
         </div>
 
             <button type="submit" class="checkout-form__submit">Đặt hàng</button>
